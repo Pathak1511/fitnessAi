@@ -42,7 +42,11 @@ exc = st.radio('Pick your exercise:', ['Squats','Situp','Bicep curl'])
 cam = "<p style='color:Red;'>Make sure that you have enabled the camera on your computer before proceeding! 💻</p>"
 st.markdown(cam, unsafe_allow_html=True)
 
-frame = webrtc_streamer(key="webcam")
+frame = webrtc_streamer(key="TEST",
+    mode=WebRtcMode.SENDRECV,
+    rtc_configuration=RTC_CONFIGURATION,
+    media_stream_constraints={"video": True, "audio": False},
+    async_processing=True,)
 
 st.metric(label="Reps Per Hour", value="0", delta="1")
 st.metric(label="Calories Burned", value="0", delta="1")
