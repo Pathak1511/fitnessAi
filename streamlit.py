@@ -46,11 +46,11 @@ RTC_CONFIGURATION = RTCConfiguration(
 )
 
 frame = webrtc_streamer(
-    key="WYH",
+    key="TEST",
     mode=WebRtcMode.SENDRECV,
     rtc_configuration=RTC_CONFIGURATION,
     media_stream_constraints={"video": True, "audio": False},
-    async_processing=False,)
+    async_processing=True,)
 
 st.metric(label="Reps Per Hour", value="0", delta="1")
 st.metric(label="Calories Burned", value="0", delta="1")
