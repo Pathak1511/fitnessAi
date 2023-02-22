@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer #https://github.com/whitphx/streamlit-webrtc
+from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 
 #import mediapipe as mp
 #import cv2
@@ -41,8 +41,12 @@ exc = st.radio('Pick your exercise:', ['Squats','Situp','Bicep curl'])
 
 cam = "<p style='color:Red;'>Make sure that you have enabled the camera on your computer before proceeding! 💻</p>"
 st.markdown(cam, unsafe_allow_html=True)
+RTC_CONFIGURATION = RTCConfiguration(
+    {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
+)
 
 frame = webrtc_streamer(key="TEST",
+    mode=WebRtcMode.SENDRECV,
     rtc_configuration=RTC_CONFIGURATION,
     media_stream_constraints={"video": True, "audio": False},
     async_processing=True,)
