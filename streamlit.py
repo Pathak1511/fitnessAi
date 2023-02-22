@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 #https://github.com/whitphx/streamlit-webrtc-example/blob/main/app.py
 st.session_state['answer'] = ''
 
- if  st.session_state['answer'] in realans:
+ if st.session_state['answer'] in realans:
         answerStat = "correct"
     elif st.session_state['answer'] not in realans:
         answerStat = "incorrect"
