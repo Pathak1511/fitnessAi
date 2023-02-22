@@ -15,10 +15,10 @@ import matplotlib.pyplot as plt
 #https://github.com/whitphx/streamlit-webrtc-example/blob/main/app.py
 st.session_state['answer'] = ''
 
- if st.session_state['answer'] in realans:
-        answerStat = "correct"
-    elif st.session_state['answer'] not in realans:
-        answerStat = "incorrect"
+if st.session_state['answer'] in realans:
+      answerStat = "correct"
+  elif st.session_state['answer'] not in realans:
+      answerStat = "incorrect"
 
 st.set_page_config(page_title='A.I. Gym Trainer', page_icon="🏋️‍♂️", layout="centered")
 
