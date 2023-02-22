@@ -46,7 +46,7 @@ RTC_CONFIGURATION = RTCConfiguration(
 )
 
 frame = webrtc_streamer(
-    key="webcam",rtc_configuration=RTC_CONFIGURATION,async_processing=False)
+    key="webcam",rtc_configuration=RTC_CONFIGURATION,async_processing=True)
 # mode=WebRtcMode.SENDRECV,
 #     rtc_configuration=RTC_CONFIGURATION,
 #     media_stream_constraints={"video": True, "audio": False},
