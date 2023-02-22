@@ -43,7 +43,6 @@ cam = "<p style='color:Red;'>Make sure that you have enabled the camera on your 
 st.markdown(cam, unsafe_allow_html=True)
 
 frame = webrtc_streamer(key="TEST",
-    mode=WebRtcMode.SENDRECV,
     rtc_configuration=RTC_CONFIGURATION,
     media_stream_constraints={"video": True, "audio": False},
     async_processing=True,)
